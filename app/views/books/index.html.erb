@@ -1,0 +1,9 @@
+<% @books.each do |post_book| %>
+<div>
+  <%= link_to book_path(post_book.id) do %>
+  <p>Title：<%= post_book.title %></p>
+  <% end %>
+  <p>Opinion：<%= post_book.opnion %></p>
+  <p>Username：<%= post_book.user.name %></p>
+</div>
+<% end %>
