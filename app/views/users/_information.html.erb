@@ -1,0 +1,21 @@
+<h1>Users info</h1>
+<!--photo image-->
+<%= attachment_image_tag @user_info, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+<table class="table">
+    <tr>
+        <td>name</td>
+        <td><%= @user_info.name %></td>
+    </tr>
+    <tr>
+        <td>introduction</td>
+        <td><%= @user_info.introduction %></td>
+    </tr>
+</table>
+    <% if @user_info.id == current_user.id %>
+    <button type="button" class="btn btn-outline-secondary btn-lg btn-block">
+    <%= link_to edit_user_path(@user_info.id) do %>
+    <i class="fas fa-user-cog"></i>
+    </button>
+    <% end %>
+    <% end %>
+

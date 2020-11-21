@@ -1,0 +1,15 @@
+<h2>プロフィール編集</h2>
+<%= form_with model:@user, local:true do |f| %>
+  <label for="inputName">Name</label>
+  <%= f.text_field :name %>
+  <label for="inputintroduction">Opinion</label>
+  <%= f.text_area :introduction %>
+
+  <label for="inputImage">ProfileImage</label>
+  <%= f.attachment_field :profile_image %>
+  <%= f.submit "変更を保存" %>
+
+   
+
+
+<% end %>
